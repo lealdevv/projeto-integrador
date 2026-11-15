@@ -82,18 +82,27 @@ function excluirProdutor(id) {
     return;
   }
 
+  const produtor = lerLista(CHAVES.produtores).find((p) => p.id === id);
+  const todosProdutos = lerLista(CHAVES.produtos);
+
   // Remove também os produtos do produtor, para não deixar dados órfãos
-  const produtosRestantes = lerLista(CHAVES.produtos).filter(
+  const produtosRestantes = todosProdutos.filter(
     (produto) => produto.produtorId !== id
   );
-  salvarLista(CHAVES.produtos, produtosRestantes);
+  const removidos = todosProdutos.length - produtosRestantes.length;
 
+  salvarLista(CHAVES.produtos, produtosRestantes);
   removerItem(CHAVES.produtores, id);
   renderizarProdutores();
+
+  const nome = produtor ? produtor.nome : "Produtor";
+  mensagem.className = "mensagem mensagem-alerta";
+  mensagem.textContent = `${nome} excluído com sucesso. Produtos removidos: ${removidos}.`;
 }
 
 formProdutor.addEventListener("submit", (evento) => {
   evento.preventDefault();
+  mensagem.className = "mensagem";
 
   const dados = lerDadosFormulario();
   const erros = validarProdutor(dados);
