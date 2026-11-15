@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo | Feira Local</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>Feira Local</h1>
+    <nav>
+      <a href="index.html" class="ativo">Catálogo</a>
+      <a href="cadastro-produtor.html">Cadastrar produtor</a>
+      <a href="cadastro-produto.html">Cadastrar produto</a>
+    </nav>
+  </header>
+
+  <main class="container container-largo">
+    <section class="cartao">
+      <h2>Catálogo de produtos</h2>
+      <div class="campo">
+        <label for="busca">Pesquisar produto</label>
+        <input type="search" id="busca" placeholder="Ex: alface, queijo...">
+      </div>
+      <p id="contador" class="contador" role="status"></p>
+    </section>
+
+    <section id="grade-produtos" class="grade"></section>
+  </main>
+
+  <script src="js/storage.js"></script>
+  <script src="js/catalogo.js"></script>
+</body>
+</html>
