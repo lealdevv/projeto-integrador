@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Produto | Feira Local</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>Feira Local</h1>
+    <nav>
+      <a href="index.html">Catálogo</a>
+      <a href="cadastro-produtor.html">Cadastrar produtor</a>
+      <a href="cadastro-produto.html" class="ativo">Cadastrar produto</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="cartao">
+      <h2 id="titulo-formulario">Cadastro de produto</h2>
+      <form id="form-produto" novalidate>
+        <input type="hidden" name="produtoId">
+
+        <div class="campo">
+          <label for="produtorId">Produtor</label>
+          <select id="produtorId" name="produtorId"></select>
+          <span class="erro" data-erro="produtorId"></span>
+        </div>
+
+        <div class="campo">
+          <label for="nome">Nome do produto</label>
+          <input type="text" id="nome" name="nome" placeholder="Ex: Alface crespa">
+          <span class="erro" data-erro="nome"></span>
+        </div>
+
+        <div class="campo">
+          <label for="preco">Preço (R$)</label>
+          <input type="text" id="preco" name="preco" inputmode="decimal" placeholder="Ex: 4,50">
+          <span class="erro" data-erro="preco"></span>
+        </div>
+
+        <div class="campo">
+          <label for="categoria">Categoria</label>
+          <select id="categoria" name="categoria">
+            <option value="">Selecione a categoria</option>
+            <option value="Hortaliças">Hortaliças</option>
+            <option value="Frutas">Frutas</option>
+            <option value="Laticínios">Laticínios</option>
+            <option value="Panificados">Panificados</option>
+            <option value="Ovos">Ovos</option>
+            <option value="Artesanato">Artesanato</option>
+            <option value="Outros">Outros</option>
+          </select>
+          <span class="erro" data-erro="categoria"></span>
+        </div>
+
+        <div class="campo">
+          <label for="descricao">Descrição (opcional)</label>
+          <textarea id="descricao" name="descricao" rows="3" maxlength="200" placeholder="Ex: Colhida no dia, sem agrotóxicos."></textarea>
+          <span class="erro" data-erro="descricao"></span>
+        </div>
+
+        <div class="campo">
+          <label for="foto">Foto (opcional)</label>
+          <input type="file" id="foto" name="foto" accept="image/*">
+          <span class="erro" data-erro="foto"></span>
+          <div id="previa-foto"></div>
+        </div>
+
+        <div class="acoes">
+          <button type="submit" id="botao-enviar" class="botao">Cadastrar produto</button>
+          <button type="button" id="botao-cancelar" class="botao botao-secundario" hidden>Cancelar edição</button>
+        </div>
+        <p id="mensagem" class="mensagem" role="status"></p>
+      </form>
+    </section>
+
+    <section class="cartao">
+      <h2>Produtos cadastrados</h2>
+      <ul id="lista-produtos" class="lista"></ul>
+    </section>
+  </main>
+
+  <script src="js/storage.js"></script>
+  <script src="js/produtos.js"></script>
+</body>
+</html>

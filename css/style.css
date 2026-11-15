@@ -1,0 +1,197 @@
+/* css/style.css - estilos base do projeto */
+
+:root {
+  --verde: #2e7d32;
+  --verde-escuro: #1b5e20;
+  --fundo: #f4f7f2;
+  --texto: #243024;
+  --borda: #cfd8cc;
+  --erro: #c62828;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+}
+
+.topo {
+  background: var(--verde);
+  color: #fff;
+  padding: 16px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.topo h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.topo nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.topo a {
+  color: #fff;
+  text-decoration: none;
+  padding-bottom: 2px;
+}
+
+.topo a:hover,
+.topo a.ativo {
+  border-bottom: 2px solid #fff;
+}
+
+.container {
+  max-width: 800px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: grid;
+  gap: 24px;
+}
+
+.cartao {
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.cartao h2 {
+  margin-top: 0;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.campo label {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  padding: 10px;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  outline: 2px solid var(--verde);
+}
+
+.campo.invalido input {
+  border-color: var(--erro);
+}
+
+.erro {
+  color: var(--erro);
+  font-size: 0.85rem;
+  margin-top: 4px;
+  min-height: 1em;
+}
+
+.botao {
+  background: var(--verde);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background: var(--verde-escuro);
+}
+
+.botao-perigo {
+  background: var(--erro);
+  padding: 6px 12px;
+  font-size: 0.9rem;
+}
+
+.mensagem {
+  margin: 12px 0 0;
+  color: var(--verde-escuro);
+  font-weight: bold;
+}
+
+.lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--borda);
+}
+
+.lista li:last-child {
+  border-bottom: none;
+}
+
+.vazio {
+  color: #6b7a6b;
+  font-style: italic;
+}/* Passo 3: produtos */
+
+.campo.invalido select,
+.campo.invalido textarea {
+  border-color: var(--erro);
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.botao-secundario {
+  background: #6b7a6b;
+}
+
+.botao-secundario:hover {
+  background: #4f5c4f;
+}
+
+.miniatura {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--borda);
+}
+
+#previa-foto {
+  margin-top: 8px;
+}
+
+.produto-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
