@@ -222,8 +222,15 @@ function excluirProduto(id) {
   if (!confirm("Excluir este produto?")) {
     return;
   }
+
+  // Se o produto excluído estava aberto para edição, volta o formulário ao normal
+  if (formProduto.produtoId.value === id) {
+    limparFormulario();
+  }
+
   removerItem(CHAVES.produtos, id);
   renderizarProdutos();
+  mensagem.textContent = "Produto excluído com sucesso!";
 }
 
 function renderizarProdutos() {
